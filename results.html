@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Customer Segmentation Results</title>
+</head>
+<body>
+    <h1>Customer Segmentation Results</h1>
+    {% if cluster_info %}
+        <p>{{ cluster_info }}</p>
+    {% else %}
+        <p>An error occurred. Please try again later.</p>
+    {% endif %}
+</body>
+</html>

@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Customer Segmentation</title>
+    <style>
+        body {
+            text-align: center; /* Center all content horizontally */
+            font-family: sans-serif;
+            /* Ensure responsiveness and prevent text overflowing on smaller screens */
+            display: flex; /* Wrap content in a flex container */
+            flex-direction: column; /* Stack elements vertically */
+            align-items: center; /* Center content horizontally */
+        }
+
+        h1 {
+            /* Optional centering for heading */
+            text-align: center;
+        }
+
+        .label-container {
+            display: flex;
+            align-items: left;
+            justify-content: space-between; /* Distribute elements evenly */
+            width: 100%; /* Adjust width as needed, ensuring responsiveness */
+            margin-bottom: 10px;
+            border-bottom: 1px solid #ddd; /* Add a subtle border for separation */
+            /* Ensure centering within the flex container */
+            margin: 0 auto;
+        }
+
+        .label {
+            width: 50%; /* Adapt width based on label length and adjust if needed */
+            text-align: right;
+            padding-right: 100px; /* Add spacing for better separation */
+        }
+
+        .input-container {
+            width: 40%; /* Adapt width based on label length and adjust if needed */
+        }
+
+        .input-container input {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+
+        /* Additional styling for responsiveness and accessibility */
+        @media (max-width: 768px) {
+            .label-container {
+                flex-direction: column; /* Stack labels on top of inputs on smaller screens */
+            }
+
+            .label {
+                width: 100%; /* Adapt width for smaller screens */
+                text-align: left; /* Align labels to the left on smaller screens */
+                margin-bottom: 5px; /* Add some margin between label and input */
+            }
+
+            .input-container {
+                width: 100%; /* Adapt width for smaller screens */
+            }
+        }
+    </style>
+    </head>
+<body>
+    <h1>Customer Segmentation</h1>
+    <form action="/" method="post">
+
+        <div class="label-container">
+            <label class="balance">Balance:</label>
+            <div class="input-container">
+                <input type="number" id="balance" name="balance" step="0.001" required>
+            </div>
+        </div>
+
+        <div class="label-container">
+            <label class="balance_frequency">Balance Frequency:</label>
+            <div class="input-container">
+                <input type="number" id="balance_frequency" name="balance_frequency" step="0.001" required>
+            </div>    
+        </div>
+
+        <div class="label-container">
+            <label for="purchases">Purchases:</label>
+            <div class="input-container">
+                <input type="number" id="purchases" name="purchases" step="0.01" required>
+            </div>
+        </div>
+
+        <div class="label-container">
+            <label for="oneoff_purchases">One-Off Purchases:</label>
+            <div class="input-container">
+                <input type="number" id="oneoff_purchases" name="oneoff_purchases" step="0.01" required>
+            </div>
+        </div>
+
+        <div class="label-container">
+            <label for="installments_purchases">Installments Purchases:</label>
+            <div class="input-container">
+                <input type="number" id="installments_purchases" name="installments_purchases" step="0.01" required>
+            </div>
+        </div>
+
+        <div class="label-container">
+            <label for="cash_advance">Cash Advance:</label>
+            <div class="input-container">
+                <input type="number" id="cash_advance" name="cash_advance" step="0.01" required>
+            </div>
+        </div>
+
+        <div class="label-container">
+            <label for="purchases_frequency">Purchases Frequency:</label>
+            <div class="input-container">
+                <input type="number" id="purchases_frequency" name="purchases_frequency" step="0.01" required>
+            </div>
+        </div>
+
+        <div class="label-container">
+            <label for="oneoff_purchases_frequency">One-Off Purchases Freq:</label>
+            <div class="input-container">
+                <input type="number" id="oneoff_purchases_frequency" name="oneoff_purchases_frequency" step="0.1" required>
+            </div>
+        </div>
+
+        <div class="label-container">
+            <label for="purchases_installments_frequency">Purchases Installments Freq:</label>
+            <div class="input-container">
+                <input type="number" id="purchases_installments_frequency" name="purchases_installments_frequency" step="0.1" required>
+            </div>
+        </div>
+
+        <div class="label-container">
+            <label for="cash_advance_frequency">Cash Advance Frequency:</label>
+            <div class="input-container">
+                <input type="number" id="cash_advance_frequency" name="cash_advance_frequency" step="0.1" required>
+            </div>
+        </div>
+
+        <div class="label-container">
+            <label for="cash_advance_trx">Cash Advance Trx:</label>
+            <div class="input-container">
+                <input type="number" id="cash_advance_trx" name="cash_advance_trx" step="1" required>
+            </div>
+        </div>
+
+        <div class="label-container">
+            <label for="purchases_trx">Purchases Trx:</label>
+            <div class="input-container">
+                <input type="number" id="purchases_trx" name="purchases_trx" step="1" required>
+            </div>
+        </div>
+
+        <div class="label-container">
+            <label for="credit_limit">Credit Limit:</label>
+            <div class="input-container">
+                <input type="number" id="credit_limit" name="credit_limit" step="0.1" required>
+            </div>
+        </div>
+
+        <div class="label-container">
+            <label for="payments">Payments:</label>
+            <div class="input-container">
+                <input type="number" id="payments" name="payments" step="0.01" required>
+            </div>
+        </div>
+
+        <div class="label-container">
+            <label for="minimum_payments">Minimum Payments:</label>
+            <div class="input-container">
+                <input type="number" id="minimum_payments" name="minimum_payments" step="0.01" required>
+            </div>
+        </div>
+
+        <div class="label-container">
+            <label for="prc_full_payment">PRC Full Payment:</label>
+            <div class="input-container">
+                <input type="number" id="prc_full_payment" name="prc_full_payment" step="0.01" required>
+            </div>
+        </div>
+
+        <div class="label-container">
+            <label for="tenure">Tenure:</label>
+            <div class="input-container">
+                <input type="number" id="tenure" name="tenure" step="1" required>
+            </div>
+        </div>
+
+        <br>
+        <a href="#" style="background-color: #4CAF50; color: white; padding: 10px 20px; text-align: center; text-decoration: none; display: inline-block; border: none; cursor: pointer;">Predict Cluster</a>
+    </form>
+</body>
+</html>
